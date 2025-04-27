@@ -4,6 +4,8 @@ configuration {
     show-icons:      true;
     display-drun:    "";
     disable-history: false;
+    kb-row-down:     "Alt+j";
+    kb-row-up:       "Alt+k";
 }
 
 * {
