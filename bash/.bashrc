@@ -1,6 +1,5 @@
-export PATH=$PATH:/home/pascal/.local/bin
+export PATH=$PATH:/home/pascal/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export enable_cursor_positioning=true
 
 set -o vi
 
@@ -166,4 +165,3 @@ source "$OSH"/oh-my-bash.sh
 #
 
 eval "$(oh-my-posh init bash --config ~/.oh-my-posh.json)"
-source ~/.local/share/blesh/ble.sh
