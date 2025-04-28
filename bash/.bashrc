@@ -1,4 +1,8 @@
+export PATH=$PATH:/home/pascal/.local/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export enable_cursor_positioning=true
+
+set -o vi
 
 # Enable the subsequent settings only in interactive sessions
 case $- in
@@ -11,7 +15,6 @@ export OSH='/home/pascal/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="font"
 
 # If you set OSH_THEME to "random", you can ignore themes you don't like.
 # OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
@@ -160,3 +163,7 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
+#
+
+eval "$(oh-my-posh init bash --config ~/.oh-my-posh.json)"
+source ~/.local/share/blesh/ble.sh
