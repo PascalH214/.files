@@ -1,6 +1,9 @@
 # Install
 ## pacman-dependencies
 sudo pacman -S hyprland rofi waybar kitty tmux
+## tmux
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm <br>
+After cloning run tmux and press ctrl+/ & shift+i to install plugins.
 ## oh-my-bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 ## oh-my-posh
