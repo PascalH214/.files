@@ -3,9 +3,8 @@
 sudo pacman -S hyprland rofi waybar kitty tmux
 ## must-have (not needed for dot-files)
 ### high-priority
-sudo pacman -S docker docker-compose
+sudo pacman -S docker docker-compose spotify-launcher
 ### low-priotiy
-yay -S spotify
 ## tmux
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm <br>
 After cloning run tmux and press ctrl+/ & shift+i to install plugins.
