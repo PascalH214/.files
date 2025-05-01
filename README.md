@@ -1,6 +1,6 @@
 # Install
 ## pacman-dependencies
-sudo pacman -S hyprland rofi waybar kitty tmux
+sudo pacman -S hyprland rofi waybar kitty tmux ttf-0xproto-nerd
 ## must-have (not needed for dot-files)
 ### high-priority
 sudo pacman -S docker docker-compose spotify-launcher
