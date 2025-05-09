@@ -184,5 +184,6 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 #
+alias c='clear && fastfetch --colors-block-range-start 9 --colors-block-width 3'
 
 eval "$(oh-my-posh init bash --config ~/.oh-my-posh.json)"
