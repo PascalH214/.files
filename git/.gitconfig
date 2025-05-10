@@ -3,3 +3,5 @@
 	name = PascalH214
 [core]
 	editor = nvim
+[init]
+	defaultBranch = main
