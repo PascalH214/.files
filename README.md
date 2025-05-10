@@ -5,6 +5,7 @@ sudo pacman -S hyprland rofi waybar kitty tmux ttf-0xproto-nerd
 ### high-priority
 sudo pacman -S docker docker-compose spotify-launcher
 ### low-priotiy
+sudo pacman -S rainfrog
 ## tmux
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm <br>
 After cloning run tmux and press ctrl+/ & shift+i to install plugins.
