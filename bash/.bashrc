@@ -12,6 +12,11 @@ function start_agent {
     /usr/bin/ssh-add; 
 }
 
+function add_ssh_keys {
+    ssh-add ~/.ssh/github
+    ssh-add ~/.ssh/gitlab
+}
+
 if [ -f "$SSH_ENV" ]; then
     . "$SSH_ENV" >/dev/null
     #ps $SSH_AGENT_PID doesn't work under Cygwin
@@ -187,3 +192,8 @@ source "$OSH"/oh-my-bash.sh
 alias c='clear && fastfetch --colors-block-range-start 9 --colors-block-width 3'
 
 eval "$(oh-my-posh init bash --config ~/.oh-my-posh.json)"
+export PATH="/opt/clion/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
