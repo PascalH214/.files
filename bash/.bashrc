@@ -190,10 +190,10 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 #
 alias c='clear && fastfetch --colors-block-range-start 9 --colors-block-width 3'
+alias ssh='TERM=xterm ssh'
 
 eval "$(oh-my-posh init bash --config ~/.oh-my-posh.json)"
-export PATH="/opt/clion/bin:$PATH"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export PATH="/opt/clion/bin:$PATH"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
