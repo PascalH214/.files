@@ -197,6 +197,6 @@ alias svim='sudoedit'
 
 export SUDO_EDITOR='nvim'
 
-if [[ $(ls ~/.local/bin/oh-my-posh) ]]; then
+if [[ $(which oh-my-posh) ]]; then
 	eval "$(oh-my-posh init bash --config ~/.oh-my-posh.json)"
 fi
