@@ -1,4 +1,6 @@
-fastfetch --colors-block-range-start 9 --colors-block-width 3
+if [[ $(which fastfetch) ]]; then
+	fastfetch --colors-block-range-start 9 --colors-block-width 3
+fi
 
 export PATH=$PATH:/home/pascal/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
@@ -189,11 +191,12 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 #
-alias c='clear && fastfetch --colors-block-range-start 9 --colors-block-width 3'
+alias c='clear && if [[ $(which fastfetch) ]]; then fastfetch --colors-block-range-start 9 --colors-block-width 3; fi;'
 alias ssh='TERM=xterm ssh'
+alias svim='sudoedit'
 
-eval "$(oh-my-posh init bash --config ~/.oh-my-posh.json)"
+export SUDO_EDITOR='nvim'
 
-export PATH="/opt/clion/bin:$PATH"
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [[ $(ls ~/.local/bin/oh-my-posh) ]]; then
+	eval "$(oh-my-posh init bash --config ~/.oh-my-posh.json)"
+fi
