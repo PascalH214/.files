@@ -3,7 +3,7 @@
 sudo pacman -S hyprland rofi waybar kitty tmux ttf-0xproto-nerd
 ## must-have (not needed for dot-files)
 ### high-priority
-sudo pacman -S docker docker-compose spotify-launcher
+sudo pacman -S docker docker-compose spotify-launcher dunst
 ### low-priotiy
 sudo pacman -S rainfrog
 ## tmux
