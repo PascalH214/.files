@@ -2,6 +2,8 @@ if [[ $(which fastfetch) ]]; then
 	fastfetch --colors-block-range-start 9 --colors-block-width 3
 fi
 
+unset HISTFILE
+
 export PATH=$PATH:/home/pascal/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
