@@ -1,5 +1,5 @@
 if [[ $(which fastfetch) ]]; then
-	fastfetch --colors-block-range-start 9 --colors-block-width 3
+	fastfetch --config ~/.config/fastfetch/config.jsonc
 fi
 
 unset HISTFILE
