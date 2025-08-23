@@ -193,7 +193,7 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 #
-alias c='clear && if [[ $(which fastfetch) ]]; then fastfetch --colors-block-range-start 9 --colors-block-width 3; fi;'
+alias c='clear && if [[ $(which fastfetch) ]]; then fastfetch --config ~/.config/fastfetch/config.jsonc; fi;'
 alias ssh='TERM=xterm ssh'
 alias svim='sudoedit'
 
