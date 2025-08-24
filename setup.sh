@@ -32,6 +32,7 @@ gui_applications=(
     rofi
     google-chrome
 		timeshift
+		feishin-bin
 )
 
 other_tools=(
