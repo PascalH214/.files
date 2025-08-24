@@ -22,6 +22,7 @@ cli_tools=(
     fastfetch
     bluetui
     ncpamixer
+		stow
 )
 
 gui_applications=(
