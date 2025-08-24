@@ -30,11 +30,15 @@ gui_applications=(
     dunst
     rofi
     google-chrome
+		timeshift
 )
 
 other_tools=(
 	docker
 	docker-compose
+	grub-btrfs
+	innotify-tools
+	timeshift-autosnap
 )
 
 install_packages() {
@@ -48,6 +52,14 @@ install_packages "protocols"        "${protocols[@]}"
 install_packages "cli-tools"        "${cli_tools[@]}"
 install_packages "gui-applications" "${gui_applications[@]}"
 install_packages "other-tools" "${other_tools[@]}"
+
+sudo /etc/grub.d/41_snapshots-btrfs
+
+UNIT_PATH=$(systemctl show -p FragmentPath grub-btrfsd | cut -d= -f2)
+
+sudo sed -i 's|^ExecStart=.*|ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto|' "$UNIT_PATH"
+sudo systemctl daemon-reload
+sudo systemctl enable --now grub-btrfsd
 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
