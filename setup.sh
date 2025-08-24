@@ -27,12 +27,14 @@ cli_tools=(
 
 gui_applications=(
     hyprland
+		hyprlock
     waybar
     dunst
     rofi
     google-chrome
 		timeshift
 		feishin-bin
+		postman
 )
 
 other_tools=(
