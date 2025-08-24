@@ -43,3 +43,11 @@ install_packages "protocols"        "${protocols[@]}"
 install_packages "cli-tools"        "${cli_tools[@]}"
 install_packages "gui-applications" "${gui_applications[@]}"
 
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+
+tmux start-server
+tmux new-session -d
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
+tmux kill-server
