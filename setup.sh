@@ -32,6 +32,11 @@ gui_applications=(
     google-chrome
 )
 
+other_tools=(
+	docker
+	docker-compose
+)
+
 install_packages() {
     local group_name="$1"
     shift
@@ -42,6 +47,7 @@ install_packages() {
 install_packages "protocols"        "${protocols[@]}"
 install_packages "cli-tools"        "${cli_tools[@]}"
 install_packages "gui-applications" "${gui_applications[@]}"
+install_packages "other-tools" "${other_tools[@]}"
 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
