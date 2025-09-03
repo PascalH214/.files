@@ -25,6 +25,7 @@ cli_tools=(
 		stow
 		sdkman
 		unzip
+		starship
 )
 
 gui_applications=(
