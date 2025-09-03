@@ -164,6 +164,7 @@ plugins=(
 #OMB_TERM_USE_TPUT=no
 
 source "$OSH"/oh-my-bash.sh
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"

@@ -23,6 +23,8 @@ cli_tools=(
     bluetui
     ncpamixer
 		stow
+		sdkman
+		unzip
 )
 
 gui_applications=(
@@ -35,6 +37,8 @@ gui_applications=(
 		timeshift
 		feishin-bin
 		postman
+		vscode
+		intellij-idea-community-edition
 )
 
 other_tools=(
@@ -53,22 +57,28 @@ install_packages() {
 }
 
 install_packages "protocols"        "${protocols[@]}"
-install_packages "cli-tools"        "${cli_tools[@]}"
-install_packages "gui-applications" "${gui_applications[@]}"
-install_packages "other-tools" "${other_tools[@]}"
+install_packages "cli tools"        "${cli_tools[@]}"
+install_packages "gui applications" "${gui_applications[@]}"
+install_packages "other tools" "${other_tools[@]}"
 
+install_packages "tools without package-manager" "${()}"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+export sdkman_auto_answer=true
+curl -s "https://get.sdkman.io" | bash
+
+
+echo -e "\n\n${YELLOW}=== Configure grub-btrfsd & timeshift-autosnap ===${RESET}\n"
 sudo /etc/grub.d/41_snapshots-btrfs
 
-UNIT_PATH=$(systemctl show -p FragmentPath grub-btrfsd | cut -d= -f2)
+UNIT_PATH=$(systemctl show -p FragmentPath grub-btrfsd | cut -d= -f2) # returns the path of service-file
 
 sudo sed -i 's|^ExecStart=.*|ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto|' "$UNIT_PATH"
 sudo systemctl daemon-reload
 sudo systemctl enable --now grub-btrfsd
 
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-
+echo -e "\n\n${YELLOW}=== Install tmux-tpm plugins ===${RESET}\n"
 tmux start-server
 tmux new-session -d
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
