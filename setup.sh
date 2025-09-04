@@ -85,3 +85,9 @@ tmux start-server
 tmux new-session -d
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 tmux kill-server
+
+echo -e "\n\n${YELLOW}=== Configure Docker ===${RESET}\n"
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+docker run hello-world
