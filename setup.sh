@@ -26,6 +26,7 @@ cli_tools=(
 		sdkman
 		unzip
 		starship
+		less
 )
 
 gui_applications=(
