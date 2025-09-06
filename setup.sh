@@ -27,6 +27,8 @@ cli_tools=(
 		unzip
 		starship
 		less
+		man-db
+		man-pages
 )
 
 gui_applications=(
