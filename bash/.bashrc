@@ -163,8 +163,12 @@ plugins=(
 #
 #OMB_TERM_USE_TPUT=no
 
-source "$OSH"/oh-my-bash.sh
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [ -f "$OSH"/oh-my-bash.sh ]; then
+	source "$OSH"/oh-my-bash.sh
+fi
+if [ -f "$OSH"/oh-my-bash.sh ]; then
+	source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -200,4 +204,6 @@ alias svim='sudoedit'
 
 export SUDO_EDITOR='nvim'
 
-eval "$(starship init bash)"
+if [[ $(which starship) ]]; then
+	eval "$(starship init bash)"
+fi
