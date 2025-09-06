@@ -51,6 +51,7 @@ other_tools=(
 	grub-btrfs
 	innotify-tools
 	timeshift-autosnap
+	autofs
 )
 
 install_packages() {
