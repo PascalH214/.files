@@ -94,3 +94,19 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 docker run hello-world
+
+echo -e "\n\n${YELLOW}=== Configure autofs ===${RESET}\n"
+line="/cifs /etc/autofs/auto.smb --timeout=300"
+file="/etc/autofs/auto.master"
+if ! grep -qxF "$line" "$file"; then
+	echo "$line" | sudo tee -a "$file" > /dev/null
+fi
+
+sudo systemctl restart autofs
+sudo systemctl enable --now autofs
+
+line="file:///cifs/192.168.178.101 TrueNAS"
+file="~/.config/gtk-3.0/bookmarks"
+if ! grep -qxF "$line" "$file"; then
+	echo "$line" | sudo tee -a "$file" > /dev/null
+fi
