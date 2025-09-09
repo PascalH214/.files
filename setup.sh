@@ -32,6 +32,7 @@ cli_tools=(
     less
     man-db
     man-pages
+		rclone
 )
 
 gui_applications=(
