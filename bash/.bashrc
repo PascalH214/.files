@@ -31,6 +31,8 @@ else
     start_agent 
 fi
 
+find ~/.ssh -type f -name "id_*" ! -name "*.pub" -exec ssh-add {} + &> /dev/null
+
 set -o vi
 
 # Enable the subsequent settings only in interactive sessions
