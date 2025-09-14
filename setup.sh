@@ -33,6 +33,7 @@ cli_tools=(
     man-db
     man-pages
 		rclone
+		maven
 )
 
 gui_applications=(
