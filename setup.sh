@@ -46,7 +46,7 @@ gui_applications=(
     timeshift
     feishin-bin
     postman
-    vscode
+		visual-studio-code-bin
     intellij-idea-community-edition
 )
 
