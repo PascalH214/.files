@@ -89,6 +89,9 @@ configure_system() {
     sudo systemctl daemon-reload
     sudo systemctl enable --now grub-btrfsd
 
+    echo -e "\n\n${YELLOW}=== Enable bluetooth.service ===${RESET}\n"
+		sudo systemctl enable --now bluetooth
+
     echo -e "\n\n${YELLOW}=== Install tmux-tpm plugins ===${RESET}\n"
     tmux start-server
     tmux new-session -d
