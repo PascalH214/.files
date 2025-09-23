@@ -48,6 +48,7 @@ gui_applications=(
     postman
 		visual-studio-code-bin
     intellij-idea-community-edition
+		wpaperd
 )
 
 other_tools=(
