@@ -1,4 +1,8 @@
 require("config.lazy")
+
+vim.lsp.enable('pyright')
+vim.lsp.enable('bashls')
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.shiftwidth = 2
