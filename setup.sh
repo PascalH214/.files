@@ -58,6 +58,7 @@ other_tools=(
     inotify-tools
     timeshift-autosnap
     autofs
+		hyprshot
 )
 
 # === Functions ===
