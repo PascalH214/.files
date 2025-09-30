@@ -49,6 +49,7 @@ gui_applications=(
 		visual-studio-code-bin
     intellij-idea-community-edition
 		wpaperd
+		naps2
 )
 
 other_tools=(
