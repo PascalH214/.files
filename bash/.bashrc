@@ -209,3 +209,7 @@ export SUDO_EDITOR='nvim'
 if [[ $(which starship) ]]; then
 	eval "$(starship init bash)"
 fi
+
+if [[ $(which terraform) ]]; then
+	complete -C /usr/bin/terraform terraform
+fi

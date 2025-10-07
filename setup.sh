@@ -34,6 +34,7 @@ cli_tools=(
     man-pages
 		rclone
 		maven
+		terraform
 )
 
 gui_applications=(
