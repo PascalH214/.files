@@ -38,7 +38,8 @@
             "font": 
             {
                 "face": "0xProto Nerd Font Mono"
-            }
+            },
+            "opacity": 90
         },
         "list": 
         [
