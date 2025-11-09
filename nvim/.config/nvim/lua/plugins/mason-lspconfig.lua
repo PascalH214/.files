@@ -10,6 +10,7 @@ return {
 				ensure_installed = {
 					"pyright",
 					"bashls",
+					"terraformls",
 				},
 			}
 		end,

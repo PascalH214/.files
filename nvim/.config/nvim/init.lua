@@ -2,6 +2,7 @@ require("config.lazy")
 
 vim.lsp.enable('pyright')
 vim.lsp.enable('bashls')
+vim.lsp.enable('terraformls')
 
 vim.opt.number = true
 vim.opt.relativenumber = true
