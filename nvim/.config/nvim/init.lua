@@ -1,4 +1,5 @@
 require("config.lazy")
+require("oil").setup()
 
 vim.lsp.enable('pyright')
 vim.lsp.enable('bashls')
@@ -32,3 +33,4 @@ vim.keymap.set("n", "<leader>d", function()
   })
 end, { desc = "Show diagnostics for current line" })
 
+vim.keymap.set('n', '<leader><Tab>', ':Oil<CR>', { noremap = true, silent = true })
