@@ -8,6 +8,7 @@ return {
 			ensure_installed = {
 				"terraform",
 				"hcl",
+				"yaml",
 			},
 			sync_install = false,
 			auto_install = true,
