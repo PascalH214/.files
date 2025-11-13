@@ -20,6 +20,7 @@ protocols=(
 cli_tools=(
 	tree
   entr
+  tmuxinator
     kitty
     git
     neovim

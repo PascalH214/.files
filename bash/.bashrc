@@ -213,3 +213,7 @@ fi
 if [[ $(which terraform) ]]; then
 	complete -C /usr/bin/terraform terraform
 fi
+
+for bcfile in ~/.bash_completion.d/* ; do
+  . $bcfile
+done
