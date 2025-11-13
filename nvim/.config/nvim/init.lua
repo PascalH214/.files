@@ -1,4 +1,5 @@
 require("config.lazy")
+require("Comment").setup()
 require("oil").setup()
 
 vim.lsp.enable('pyright')
@@ -10,6 +11,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+vim.opt.expandtab = true
 
 vim.cmd.colorscheme "catppuccin-mocha"
 

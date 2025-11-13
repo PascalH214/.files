@@ -19,6 +19,7 @@ protocols=(
 
 cli_tools=(
 	tree
+  entr
     kitty
     git
     neovim
