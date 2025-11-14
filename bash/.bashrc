@@ -4,7 +4,7 @@ fi
 
 unset HISTFILE
 
-export PATH=$PATH:/home/pascal/bin
+export PATH=$PATH:/home/$USER/bin:/home/$USER/Applications/clion/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR=nvim
 export DISABLE_AUTO_TITLE='true'
