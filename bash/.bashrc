@@ -4,7 +4,7 @@ fi
 
 unset HISTFILE
 
-export PATH=$PATH:/home/$USER/bin:/home/$USER/Applications/clion/bin
+export PATH=$PATH:$HOME/bin:$HOME/Applications/clion/bin:$HOME/.local/share/nvim/mason/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR=nvim
 export DISABLE_AUTO_TITLE='true'
@@ -16,11 +16,6 @@ function start_agent {
     chmod 600 "$SSH_ENV"
     . "$SSH_ENV" >/dev/null
     /usr/bin/ssh-add; 
-}
-
-function add_ssh_keys {
-    ssh-add ~/.ssh/github
-    ssh-add ~/.ssh/gitlab
 }
 
 if [ -f "$SSH_ENV" ]; then

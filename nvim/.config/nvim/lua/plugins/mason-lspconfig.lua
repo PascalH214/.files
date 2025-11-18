@@ -12,6 +12,7 @@ return {
 					"bashls",
 					"terraformls",
 					"yamlls",
+          "ansiblels",
 				},
 			}
 		end,

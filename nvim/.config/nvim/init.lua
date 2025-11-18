@@ -6,6 +6,7 @@ vim.lsp.enable('pyright')
 vim.lsp.enable('bashls')
 vim.lsp.enable('terraformls')
 vim.lsp.enable('yamlls')
+vim.lsp.enable('ansiblels')
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -37,3 +38,4 @@ vim.keymap.set("n", "<leader>d", function()
 end, { desc = "Show diagnostics for current line" })
 
 vim.keymap.set('n', '<leader><Tab>', ':Oil<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, { silent = true })
