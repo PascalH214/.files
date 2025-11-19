@@ -1,10 +1,10 @@
 if [[ $(which fastfetch) ]]; then
-	fastfetch --config ~/.config/fastfetch/config.jsonc
+  fastfetch --config ~/.config/fastfetch/config.jsonc
 fi
 
 unset HISTFILE
 
-export PATH=$PATH:$HOME/bin:$HOME/Applications/clion/bin:$HOME/.local/share/nvim/mason/bin
+export PATH=$PATH:$HOME/bin:$HOME/Applications/clion/bin:$HOME/.local/share/nvim/mason/bin:$HOME/.local/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR=nvim
 export DISABLE_AUTO_TITLE='true'
@@ -12,30 +12,30 @@ export DISABLE_AUTO_TITLE='true'
 SSH_ENV="$HOME/.ssh/agent-environment"
 
 function start_agent {
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' >"$SSH_ENV"
-    chmod 600 "$SSH_ENV"
-    . "$SSH_ENV" >/dev/null
-    /usr/bin/ssh-add; 
+  /usr/bin/ssh-agent | sed 's/^echo/#echo/' >"$SSH_ENV"
+  chmod 600 "$SSH_ENV"
+  . "$SSH_ENV" >/dev/null
+  /usr/bin/ssh-add
 }
 
 if [ -f "$SSH_ENV" ]; then
-    . "$SSH_ENV" >/dev/null
-    #ps $SSH_AGENT_PID doesn't work under Cygwin
-    ps -ef | grep $SSH_AGENT_PID | grep ssh-agent$ >/dev/null || {
-        start_agent
-    } 
+  . "$SSH_ENV" >/dev/null
+  #ps $SSH_AGENT_PID doesn't work under Cygwin
+  ps -ef | grep $SSH_AGENT_PID | grep ssh-agent$ >/dev/null || {
+    start_agent
+  }
 else
-    start_agent 
+  start_agent
 fi
 
-find ~/.ssh -type f -name "id_*" ! -name "*.pub" -exec ssh-add {} + &> /dev/null
+find ~/.ssh -type f -name "id_*" ! -name "*.pub" -exec ssh-add {} + &>/dev/null
 
 set -o vi
 
 # Enable the subsequent settings only in interactive sessions
 case $- in
-  *i*) ;;
-    *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # Path to your oh-my-bash installation.
@@ -163,10 +163,10 @@ plugins=(
 #OMB_TERM_USE_TPUT=no
 
 if [ -f "$OSH"/oh-my-bash.sh ]; then
-	source "$OSH"/oh-my-bash.sh
+  source "$OSH"/oh-my-bash.sh
 fi
 if [ -f "$OSH"/oh-my-bash.sh ]; then
-	source "$HOME/.sdkman/bin/sdkman-init.sh"
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
 # User configuration
@@ -204,13 +204,13 @@ alias svim='sudoedit'
 export SUDO_EDITOR='nvim'
 
 if [[ $(which starship) ]]; then
-	eval "$(starship init bash)"
+  eval "$(starship init bash)"
 fi
 
 if [[ $(which terraform) ]]; then
-	complete -C /usr/bin/terraform terraform
+  complete -C /usr/bin/terraform terraform
 fi
 
-for bcfile in ~/.bash_completion.d/* ; do
+for bcfile in ~/.bash_completion.d/*; do
   . $bcfile
 done
