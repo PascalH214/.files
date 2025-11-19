@@ -9,8 +9,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR=nvim
 export DISABLE_AUTO_TITLE='true'
 
-unset TMUX
-
 SSH_ENV="$HOME/.ssh/agent-environment"
 
 function start_agent {
