@@ -1,0 +1,8 @@
+[opener]
+play = [{ run = 'vlc "$@"', orphan = true, for = 'unix' }]
+edit = [{ run = 'nvim "$@"', block = true }]
+
+[open]
+rules = [
+  { mime = "video/*", use = "play" }
+]

@@ -214,3 +214,7 @@ fi
 for bcfile in ~/.bash_completion.d/*; do
   . $bcfile
 done
+
+if [[ $(which zoxide) ]]; then
+  source $HOME/.zoxide
+fi

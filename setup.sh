@@ -18,6 +18,15 @@ protocols=(
 )
 
 cli_tools=(
+  ffmpeg
+  jq
+  poppler
+  fd
+  ripgrep 
+  resvg 
+  imagemagick
+  7zip
+  zoxide
   entr
   tmuxinator
   kitty
@@ -46,6 +55,8 @@ tui_tools=(
 )
 
 gui_applications=(
+  vlc
+  vlc-plugins-all
   hyprland
   hyprlock
   waybar
